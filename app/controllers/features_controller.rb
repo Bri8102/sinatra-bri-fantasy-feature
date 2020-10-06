@@ -1,0 +1,5 @@
+class Features < ApplicationController
+
+
+
+end
