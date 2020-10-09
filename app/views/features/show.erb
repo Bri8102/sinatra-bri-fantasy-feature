@@ -1,0 +1,11 @@
+<h1>Here is your Feature</h1>
+<p><%= @feature.song %>by <%= feature.artist1 %> ft. <%= feature.artist2 %></p><br>
+
+<form method="POST" action="/features/<%=@feature.id%>/delete">
+<input type="hidden" id="hidden" name="_method" value="DELETE">
+<input type="submit" value="Delete Feature">
+
+</form>
+<a href="/features/<%=@feature.id%>/edit">Edit Feature</a>
+
+

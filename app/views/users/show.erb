@@ -1,0 +1,11 @@
+<h1> Welcome <%= @user.username %>! Here are your Features!</h1>
+
+<ul>
+    <% @user.features.each do |feature| %>
+        <li>
+            <%= feature.song %> by <%= feature.artist1 %> ft. <%= feature.artist2 %>
+        </li>
+    <% end %>
+</ul>
+
+<a href="/logout">Log Out</a>

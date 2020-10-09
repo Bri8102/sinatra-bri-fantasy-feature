@@ -1,32 +1,27 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!doctype html>
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-
-    <title>FantasyFeature</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <title>Fantasy Feature World</title>
   </head>
   <body>
-    <div class="wrapper">
 
-        <%= yield %>
-
-      <footer class="branding">
-        <small>&copy; 2020 <strong>FantasyFeature</strong></small>
-      </footer>
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+       <h1>Welcome to Fantasy Feature World!</h1> 
+ 
+       <p>Welcome to the Fantasy Feature World! Do you sometimes wonder how great your Fav Artists would sound on a track together? Well, here you can create all the features you wish existed and we can pitch the idea to various label services to see if we can really make this happen.</p>
+       
+ 
+       <h3>NB: All feature ideas are visible to the public.</h3>
+ 
+       <%= yield %>
+ 
+       <footer class="branding">
+       <h4>NB: All feature ideas are visible to the public.</h4>
+         <small>&copy; 2020 <strong>Fantasy Feature</strong></small>
+         <img src="images/fantasy-feature.png" class="img-responsive main-image">
+       </footer>
+      </div>
     </div>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <!--[if lt IE 7]>
-      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-      <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-    <![endif]-->
   </body>
-</html>
+</html> 
