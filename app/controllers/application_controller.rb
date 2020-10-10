@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :secret_secret, "featureworld"
+    set :session_secret, "featureworld"
   end
 
   get '/' do
@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
 
   helpers do
     def logged_in?
-       !!session[:user_id]
+      !!session[:user_id]
     end
 
     def current_user

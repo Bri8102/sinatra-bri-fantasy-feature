@@ -1,10 +1,18 @@
 GIT
   remote: https://github.com/bmabey/database_cleaner.git
-  revision: 855abc968d6ec1bf86b5c2a90687c53151794a0d
+  revision: 661fe7ef3021c5002de8f98542760c38b9c9505c
   specs:
     database_cleaner (2.0.0.beta)
       database_cleaner-active_record (~> 2.0.0.beta2)
     database_cleaner-core (2.0.0.beta2)
+
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: f594f2d4fc6ccada9d1e5fc42e3b8ddf4b3e4021
+  branch: master
+  specs:
+    faker (2.14.0)
+      i18n (>= 1.6, < 2)
 
 GIT
   remote: https://github.com/macournoyer/thin.git
@@ -125,6 +133,7 @@ DEPENDENCIES
   bcrypt
   capybara
   database_cleaner!
+  faker!
   pry
   rack-test
   rake

@@ -22,11 +22,11 @@ class FeaturesController < ApplicationController
             if params[:song] == ""
                 redirect to "features/new"
             else
-            @features = current_user.features.build(song: params[:song],artist1: params[:artist1], artist2: params[:artist2], user_id: session[:user_id])
+            @features = current_user.features.build(song: params[:song],artist1: params[:artist1], artist2: params[:artist2])
              if @features.save
                 redirect to "/features/#{@features.id}"
              else
-                redirect to "/features/new"
+                redirect to "/features"
             end
         end
        else
@@ -46,9 +46,9 @@ end
     get '/features/:id/edit' do
         if logged_in?
             @feature = Feature.find_by_id(params[:id])
-            if @feature && @feature.user == current_user
+            if @feature != "" && @feature.user == current_user
 
-        erb :"features/edit"
+             erb :"features/edit"
             else
                 redirect to "/features"
             end

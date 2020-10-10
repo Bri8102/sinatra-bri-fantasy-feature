@@ -1,12 +1,17 @@
-<h1> Welcome, <%= current_user.username %></h1>
+<% if current_user.username != nil  %>
+  <h1> Welcome, <%= current_user.username %></h1>
+<% end %>
 
-See what features people are fantasising about!
+<h4>See what features people are fantasising about!</h4>
 
 <% @features.each do |f| %>
   <div>
-    <%= f.song %> by <%= f.artist1 %> ft. <%= f.artist2 %>
+    <%= f.song %> - <%= f.artist1 %> ft. <%= f.artist2 %>
   </div>
 <% end %> 
 
 <a href="/logout">Log Out</a>
+<a href="/features/new">Create Another Feature</a>
+<a href="/features">View Feature</a>
+
 

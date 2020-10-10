@@ -1,14 +1,31 @@
 <h1>Welcome! </h1>
 
+ <p>Welcome to the Fantasy Feature World! Do you sometimes wonder how great your Fav Artists would sound on a track together? Well, here you can create all the features you wish existed and we can pitch the idea to various label services to see if we can really make this happen.</p>
+
+
 <% if logged_in? %>
 
 <h2>Hello <%= current_user.username %></h2><br>
 
-<a href="/features/new">New Feature</a>
-    <a href="/logout">Log Out</a>
+<h6>What would you like to do?</h6>
+<ul>
+<li><a href="/features/new">Create New Feature</a></li>
+<li><a href="/features/show">View Features</a></li>
+<li><a href="/logout">Log Out</a></li>
 
+</ul>
 <% else %>
 
- <a href="/users/signup">Sign Up</a>
+ <a href="/signup">Sign Up</a>
     <a href="/login"> Sign In </a>
 <% end %> 
+
+
+<!-- <h4>Here are your Features</h4>
+<% @user.features.each do |f| %>
+<ul>
+  <li>
+    <%= f.song %> - <%= f.artist1 %> ft. <%= f.artist2 %>
+  </li>
+</ul>
+<% end %> <br> -->
