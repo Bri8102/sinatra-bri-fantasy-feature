@@ -5,7 +5,7 @@
 
 <% if logged_in? %>
 
-<h2>Hello <%= current_user.username %></h2><br>
+<h2>Hello <%= current_user.username.split.map(&:capitalize)*' ' %></h2><br>
 
 <h6>What would you like to do?</h6>
 <ul>
