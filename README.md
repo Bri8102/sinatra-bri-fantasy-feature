@@ -20,4 +20,9 @@ To use this app, clone the app and run the following commands in your CLI:
 * Once installed, copy and paste http://localhost:9393 into your browser's address bar, which should take you to the landing page. From there, click the "Sign Up" button to create your account and then create the Fantasy Artist Collaboration Feature of your dreams!
 * To stop, press control + c
 
+## Contribution
+
+Please feel free to contribute to the project, and if any bug is found, please contact me at boniruedwards@gmail.com.
+
+
 ## License: https://github.com/Bri8102/sinatra-bri-fantasy-feature/blob/master/LICENSE
