@@ -16,10 +16,12 @@ class ApplicationController < Sinatra::Base
 
   helpers do
     def logged_in?
+      #checks if session is set to user-ID
       !!session[:user_id]
     end
 
     def current_user
+      #If current user is null, set it their session to user_id otherwise keep the current value
       @user ||= User.find_by(id: session[:user_id])
     end
   end
