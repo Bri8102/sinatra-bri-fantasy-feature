@@ -51,7 +51,6 @@ end
     end
 
     get '/features/user/:id' do
-        
         @features = Feature.where("user_id=#{params[:id]}").map {|f| f}
         erb :'features/show'
     end
