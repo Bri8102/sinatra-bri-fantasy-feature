@@ -2,7 +2,7 @@ class FeaturesController < ApplicationController
     
     get '/features' do
         if logged_in?
-            @features = Feature.all
+            @features = Feature.all 
         erb :"features/index"
         else  
             redirect to "/login"
@@ -22,11 +22,17 @@ class FeaturesController < ApplicationController
             if params[:song] == ""
                 redirect to "features/new"
             else
-            @features = current_user.features.build(song: params[:song],artist1: params[:artist1], artist2: params[:artist2])
-             if @features.save
-                redirect to "/features/#{@features.id}"
+                if @feature = Feature.find_by(user_id: session[:user_id], song: params[:song])
+                    redirect to "/features/#{@feature.id}"
+                else
+                 @feature = Feature.create(song: params[:song],artist1: params[:artist1], artist2: params[:artist2], user_id: session[:user_id])
+            # binding.pry
+             if @feature.save
+                # binding.pry
+                redirect to "/features/#{@feature.id}"
              else
                 redirect to "/features"
+             end
             end
         end
        else
@@ -37,21 +43,32 @@ end
     get '/features/:id' do
         if logged_in?
         @feature = Feature.find(params[:id])
+        @features = Feature.where("user_id=#{session[:user_id]}").map {|f| f}
         erb :"features/show"
         else
             redirect to '/login'
         end
     end
 
+    get '/features/user/:id' do
+        
+        @features = Feature.where("user_id=#{params[:id]}").map {|f| f}
+        erb :'features/show'
+    end
+
+
+
     get '/features/:id/edit' do
         if logged_in?
-            @feature = Feature.find_by_id(params[:id])
-            if @feature != "" && @feature.user == current_user
+            @features = Feature.where("user_id=#{session[:user_id]}").map {|f| f}
+            
+            # @feature = Feature.find_by_id(params[:id])
+            # if @feature != "" && @feature.user == current_user
 
              erb :"features/edit"
-            else
-                redirect to "/features"
-            end
+            # else
+            #     redirect to "/features"
+            
         else
             redirect to "/login"
         end
@@ -74,6 +91,7 @@ end
 
     delete '/features/:id/delete' do
         if logged_in?
+            # binding.pry
             @feature = Feature.find_by_id(params[:id])
             if @feature && @feature.user == current_user
             @feature.delete

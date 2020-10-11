@@ -1,9 +1,13 @@
 <h1>Edit your Feature!</h1>
-<form method="POST" action="/features/<%=@feature.id%>">
+<% @features.each do |feature|%>
+<form method="POST" action="/features/<%=feature.id%>">
 <input type="hidden" id="hidden" name="_method" value="PATCH">
-<input type="text" name="song" value="<%=@feature.song%>">
-<input type="text" name="artist1" value="<%=@feature.artist1%>">
-<input type="text" name="artist2" value="<%=@feature.artist2%>">
+<input type="text" name="song" value="<%=feature.song%>">
+<input type="text" name="artist1" value="<%=feature.artist1%>">
+<input type="text" name="artist2" value="<%=feature.artist2%>">
 <input type="submit" id="submit" value="Submit">
 </form> 
+<% end %>
+
+
 

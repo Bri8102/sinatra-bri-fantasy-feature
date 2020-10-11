@@ -1,12 +1,24 @@
-<h1>Here is your Feature</h1>
-<p><strong><%= @feature.song %></strong> - <%= @feature.artist1 %> ft. <%= @feature.artist2 %></p><br>
+<% if current_user.username != nil  %>
+  <h1><%= current_user.username.split.map(&:capitalize)*' '%></h1>
+<% end %>
 
-<form method="POST" action="/features/<%=@feature.id%>/delete">
-<input type="hidden" id="hidden" name="_method" value="DELETE">
-<input type="submit" value="Delete Feature">
+<h5>Here are your features</h5>
+<% @features.each do |f| %>
 
-</form>
-<a href="/features/<%=@feature.id%>/edit">Edit Feature</a>
+  <div>
+    <%= f.song %> - <%= f.artist1 %> ft. <%= f.artist2 %>
+<%#= #    binding.pry  %>  
+   <button type ="button"> <form method="POST" action="/features/<%=f.id%>/delete">
+     <input type="hidden" id="hidden" name="_method" value="DELETE">
+     <input type="submit" value="Delete Feature">
+   </button>
+   <button >
+     <a href="/features/<%=f.id%>/edit"> Edit Feature</a>
+   </button>
+
+  </div>
+<% end %> 
+
+
 <a href="/features/new">Create Another Feature!</a>
-
 
