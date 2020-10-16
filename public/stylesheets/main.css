@@ -49,6 +49,7 @@
 
   p {
     margin-bottom: 18px;
+    display: inline-block;
   }
 
   .main {
@@ -80,6 +81,11 @@
     border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
+  }
+
+  img.img-responsive main-image {
+    width: 100%;
+    height: auto;
   }
 }
 

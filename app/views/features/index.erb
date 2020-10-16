@@ -6,11 +6,6 @@
 
 <% @features.each do |f| %>
   <div>
-    <%= f.song %> - <%= f.artist1 %> ft. <%= f.artist2 %>
+    <%= f.song %> - <%= f.artist1 %> ft. <%= f.artist2 %> created by <%= f.user.username%>
   </div>
 <% end %> 
-
-<a href="/logout">Log Out</a>
-<a href="/features/new">Create Another Feature</a>
-<a href="/features/user/<%=current_user.id %>">View Feature</a>
-
